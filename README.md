@@ -1,12 +1,28 @@
-# DB Details 
-Used in memory H2 DB as per instruction given. DB will reinitialize with every restart of the application.
-
 # API details
 API details are present in swagger UI.
 Link to swagger UI : http://localhost:8080/swagger-ui.html#
 In your case replace context-root with the required context root & swagger-ui URL will form as context-root/swagger-ui.html.
 
-# employeeserv
+# DB Details 
+Used in memory H2 DB as per instruction given. DB will reinitialize with every restart of the application.
+
+# Idempotency
+Considering employees are same if they have same firstName & alstName hypothetically.
+Returning 409 HTTP status code in case of conflict while someone tries to cretae employee object where employee details are already present.
+
+# Validation Utilities
+For different validatins , I am retunring diffrent error codes.
+To validate POST API
+     In case of idempotency failure http error code is 409.
+     In case of DOB format mismatch http error code is 406.
+     In case of invalid input http error code is 400.
+To validate GET API
+     In case of employee record not found http error code is 404.
+
+# Test Case
+All integration/Unit tests are part of employeeservImplementation module which actually corrosponds to implemtaion of the service.
+This test code are part of /src/test/java.
+     
 
 ## Application Overview
 employeeserv is a spring boot rest application which would provide the CRUD operations for `Employee` resource.
