@@ -1,3 +1,11 @@
+# DB Details 
+Used in memory H2 DB as per instruction given. DB will reinitialize with every restart of the application.
+
+# API details
+API details are present in swagger UI.
+Link to swagger UI : http://localhost:8080/swagger-ui.html#
+In your case replace context-root with the required context root & swagger-ui URL will form as context-root/swagger-ui.html.
+
 # employeeserv
 
 ## Application Overview
